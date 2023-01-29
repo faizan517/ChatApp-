@@ -1,21 +1,22 @@
-import { View, Text, Image, } from "react-native";
-import TouchableRippleEffect from "../RippleEffect";
+import { View, Text, Image } from "react-native";
 import styles from "./styles";
+import React from 'react'
 
-
-const MessageTab = ()=>{
-    return(
-        <View style={styles.mainContainer}>
-      <Image source={{uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg'}} style={styles.image}/>
+const MessageTab = ({ chatRoom }) => {
+  const user = chatRoom.users[1];
+  return (
+    <View style={styles.mainContainer}>
+      <Image source={{ uri: user.imageUri }} style={styles.image} />
       <View style={styles.secondContainer}>
         <View style={styles.thirdContainer}>
-          <Text style={styles.namefont}>Faizan</Text>
-          <Text style={styles.font}>11:00</Text>
+          <Text style={styles.namefont}>{user.name}</Text>
+          <Text style={styles.font}>{chatRoom.lastMessage.createdAt}</Text>
         </View>
-        <Text style={styles.font} numberOfLines={1} >Hola hola coca cola?</Text>
+        <Text style={styles.font} numberOfLines={1}>
+          {chatRoom.lastMessage.content}
+        </Text>
       </View>
     </View>
-    )
-
-}
+  );
+};
 export default MessageTab;

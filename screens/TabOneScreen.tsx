@@ -1,21 +1,20 @@
 import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View, Image, ScrollView } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
 import { RootTabScreenProps } from '../types';
 import MessageTab from '../components/messagesTab'
+import ChatRoomsData from '../assets/dummy-data/ChatRooms';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+
+export default function TabOneScreen() {
   return (
-    <ScrollView>
-      <MessageTab/>
-      <MessageTab/>
-      <MessageTab/>
-      <MessageTab/>
-      <MessageTab/>
-      <MessageTab/>
-      <MessageTab/>
-    </ScrollView>
+    <View>
+      <FlatList
+      data={ChatRoomsData}
+      renderItem={({item})=><MessageTab chatRoom={item}/>}
+      showsVerticalScrollIndicator={false}/>
+    </View>
     
   );
 }

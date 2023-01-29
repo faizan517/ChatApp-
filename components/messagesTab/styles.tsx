@@ -2,9 +2,6 @@ import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
     mainContainer: {
-      // height:70,
-      // width: '100%',
-      // backgroundColor:'white',
       flexDirection:'row',
       padding:5
   
@@ -20,7 +17,6 @@ const styles = StyleSheet.create({
       opacity:1
     },
     thirdContainer:{
-      // backgroundColor:'red',
       flexDirection:'row',
       justifyContent:'space-between',
       alignItems:'center'
@@ -33,7 +29,6 @@ const styles = StyleSheet.create({
     font:{
       fontSize:15,
       color:'gray'
-      // marginLeft:5
     }
   });
 
