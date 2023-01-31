@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     namefont:{
       fontSize:20,
       fontWeight:'bold',
-      marginBottom:2
+      marginBottom:3
     },
     font:{
       fontSize:15,
